@@ -1,0 +1,32 @@
+/*
+    Using 7-1 Architecture
+    Using BEM notation
+    1 Block
+    2 Element
+    3 Modifier
+    '.block__element--modifier'
+*/
+// ORDER IS IMPORTANT HERE
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utils";
+
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story.scss";
+@import "components/bg-video";
+@import "components/form";
+
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/navigation";
+
+@import "pages/home";

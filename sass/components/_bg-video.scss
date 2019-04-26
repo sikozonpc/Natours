@@ -1,0 +1,20 @@
+.bg-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	opacity: 0.15;
+
+	// Since it's 100% of screen we need the border, and this makes it so it doenst overflow.
+	overflow: hidden;
+
+	&__content {
+		height: 100%;
+		width: 100%;
+
+		// Maintains the aspect ratio & the width
+		object-fit: cover;
+	}
+}
