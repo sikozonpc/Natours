@@ -7,8 +7,24 @@
     3 Modifier
     '.block__element--modifier'
 */
+/*
+0 - 600px - Phone 
+600 - 900px - Tablet Portrait
+900 - 1200px - Tablet Landascape
+1200 - 1800 - Normal styles have been aplied
+1800+ - Big Desktops
+*/
+/*
+$breakpoint argument choices:
+- phone 
+- tab-port
+- tab-land
+- big-desktop
+*/
 /* Simple Reset */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit; }
@@ -16,7 +32,18 @@
 html {
   /* 0.625 * 16px = 10px */
   /* Using % good for user that need to change the font size*/
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* Even the padding and margin using rem, so by changing the font-size 
+    we can change the whole design!!!!*/ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
