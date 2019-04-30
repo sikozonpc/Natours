@@ -11,8 +11,8 @@
 		transition: 0.8s all ease;
 		font-size: 1.5rem;
 		position: absolute;
-		top:0;
-		left:0;
+		top: 0;
+		left: 0;
 		width: 100%;
 		/* Hides the backpart of an element */
 		backface-visibility: hidden;
@@ -29,13 +29,25 @@
 			transform: rotateY(180deg);
 
 			&-1 {
-				background: linear-gradient(to right bottom , $color-secondary-light, $color-secondary);
+				background: linear-gradient(
+					to right bottom,
+					$color-secondary-light,
+					$color-secondary
+				);
 			}
 			&-2 {
-				background: linear-gradient(to right bottom , $color-primary-light, $color-primary);
+				background: linear-gradient(
+					to right bottom,
+					$color-primary-light,
+					$color-primary
+				);
 			}
 			&-3 {
-				background: linear-gradient(to right bottom , $color-tertiary-light, $color-tertiary);
+				background: linear-gradient(
+					to right bottom,
+					$color-tertiary-light,
+					$color-tertiary
+				);
 			}
 		}
 	}
@@ -53,26 +65,35 @@
 		// Background blend !
 		background-blend-mode: screen;
 		height: 23rem;
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100% );
-		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100% );
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 		// Since clip-path breaks the overflow we have to set it manualy
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
 
 		&--1 {
-			background-image:linear-gradient(to right bottom , $color-secondary-light, $color-secondary)
-			, url("../img/nat-5.jpg");
-			
+			background-image: linear-gradient(
+					to right bottom,
+					$color-secondary-light,
+					$color-secondary
+				),
+				url("../img/nat-5.jpg");
 		}
 		&--2 {
-			background-image: linear-gradient(to right bottom , $color-primary-light, $color-primary),
-			url("../img/nat-6.jpg");
-			
+			background-image: linear-gradient(
+					to right bottom,
+					$color-primary-light,
+					$color-primary
+				),
+				url("../img/nat-6.jpg");
 		}
 		&--3 {
-			background-image: linear-gradient(to right bottom , $color-tertiary-light, $color-tertiary),
-			url("../img/nat-7.jpg");
-		
+			background-image: linear-gradient(
+					to right bottom,
+					$color-tertiary-light,
+					$color-tertiary
+				),
+				url("../img/nat-7.jpg");
 		}
 	}
 
@@ -94,19 +115,25 @@
 		-webkit-box-decoration-break: clone;
 
 		&--1 {
-			background: linear-gradient(to right bottom, 
-			rgba($color-secondary-light, 0.85)
-			,rgba($color-secondary, 0.85) );			
+			background: linear-gradient(
+				to right bottom,
+				rgba($color-secondary-light, 0.85),
+				rgba($color-secondary, 0.85)
+			);
 		}
 		&--2 {
-			background: linear-gradient(to right bottom, 
-			rgba($color-primary-light, 0.85)
-			,rgba($color-primary, 0.85) );			
+			background: linear-gradient(
+				to right bottom,
+				rgba($color-primary-light, 0.85),
+				rgba($color-primary, 0.85)
+			);
 		}
 		&--3 {
-			background: linear-gradient(to right bottom, 
-			rgba($color-tertiary-light, 0.85)
-			,rgba($color-tertiary, 0.85) );			
+			background: linear-gradient(
+				to right bottom,
+				rgba($color-tertiary-light, 0.85),
+				rgba($color-tertiary, 0.85)
+			);
 		}
 	}
 
@@ -116,7 +143,7 @@
 			list-style: none;
 			width: 80%;
 			margin: auto;
-			
+
 			li {
 				text-align: center;
 				font-size: 1.5rem;
@@ -134,7 +161,7 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 		text-align: center;
 	}
 
@@ -152,5 +179,53 @@
 	&__price-value {
 		font-size: 6rem;
 		font-weight: 200;
+	}
+
+	//
+	// Big media query incomning
+	//
+	@include respond(tab-port) {
+		height: auto;
+		border-radius: 3px;
+		background-color: #fff;
+		box-shadow: 0 1.5rem 40px rgba($color-black, 0.15);
+
+		&__side {
+			height: auto;
+			position: relative;
+			box-shadow: none;
+
+			&--back {
+				transform: rotateY(0);
+				-webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+
+		&:hover &__side--front {
+			transform: rotateY(0);
+		}
+
+		&__details {
+			padding: 1rem 3rem;
+		}
+
+		// Back side styling
+		&__cta {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0);
+			width: 100%;
+			padding: 7rem 4rem 4rem 4rem;
+		}
+
+		&__price-box {
+			margin-bottom: 3rem;
+		}
+
+		&__price-value {
+			font-size: 6rem;
+		}
 	}
 }
