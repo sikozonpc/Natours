@@ -8,10 +8,9 @@
 			href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
 			rel="stylesheet"
 		/>
-
+		<!-- Commnet the font-icons in productions -->
 		<link rel="stylesheet" href="css/icon-fonts.css" />
-		<link rel="stylesheet" href="css/icon-font.css" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
 		<title>Natours | Exciting tours for adventurous people</title>
@@ -470,11 +469,25 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__logo-box">
-				<img
-					src="./img/logo-green-2x.png"
-					alt="Full logo"
-					class="footer__logo"
-				/>
+				<!-- Art Direction -->
+				<picture class="footer__logo">
+					<source
+						media="(max-width: 37.5em)"
+						srcset="
+							img/logo-green-small-1x.png 1x,
+							img/logo-green-small-2x.png 2x
+						"
+					/>
+					<!-- and Density switching -->
+					<img
+						srcset="
+							./img/logo-green-1x.png 1x,
+							./img/logo-green-2x.png 2x
+						"
+						alt="Full logo"
+						src="./img/logo-green-2x.png"
+					/>
+				</picture>
 			</div>
 			<div class="row">
 				<div class="col-1-of-2">
