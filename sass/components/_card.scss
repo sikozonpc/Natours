@@ -183,8 +183,10 @@
 
 	//
 	// Big media query incomning
+	// Displaign part of the back of the card for small screens and
+	// big screens that are touch devices
 	//
-	@include respond(tab-port) {
+	@media only screen and (max-width: 56.25em), only screen and (hover: none) {
 		height: auto;
 		border-radius: 3px;
 		background-color: #fff;

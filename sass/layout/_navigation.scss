@@ -144,7 +144,7 @@
 		}
 	}
 
-	&__button:hover &__icon:before {
+	&__button:hover &__icon::before {
 		top: -1rem;
 	}
 	&__button:hover &__icon::after {
